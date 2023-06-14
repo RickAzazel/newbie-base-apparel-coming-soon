@@ -1,22 +1,18 @@
+/* ========== Constants ========== */
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
+/* ========== Variables ========== */
 const form = document.querySelector('.form');
 const email = document.querySelector('.input');
 
-
-form.addEventListener('submit', e => {
-	e.preventDefault();
-
-	validateInput();
-});
-
+/* ========== Functions ========== */
 const setError = (element, message) => {
 	const errorMessage = document.querySelector('.input__error-text');
 	const errorIcon = document.querySelector('.input__error-icon');
 
 	element.classList.add('error-input');
 	errorMessage.innerHTML = message;
-	errorIcon.style.display = 'block'
+	errorIcon.style.display = 'block';
 };
 
 const setSuccess = element => {
@@ -32,7 +28,7 @@ const setSuccess = element => {
 
 const isValidEmail = email => {
 	return EMAIL_REGEXP.test(String(email).toLowerCase());
-}
+};
 
 const validateInput = () => {
 	const emailValue = email.value.trim();
@@ -45,5 +41,17 @@ const validateInput = () => {
 	}
 	else {
 		setSuccess(email);
-	}
+	};
 };
+
+/* ========== Events ========== */
+form.addEventListener('submit', e => {
+	e.preventDefault();
+
+	validateInput();
+});
+
+
+
+
+

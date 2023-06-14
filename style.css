@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
 *,
 ::after,
 ::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 :root {
@@ -33,7 +36,6 @@
 }
 
 html {
-	font-family: 'Josefin Sans', sans-serif;
 	font-size: 62.5%;
 }
 
@@ -47,6 +49,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100vh;
+	min-height: 900px;
 	overflow: scroll;
 	background: linear-gradient(135deg,
 			var(--main-bg-color-start),
@@ -56,7 +59,7 @@ body {
 .coming-soon {
 	display: flex;
 	width: 100%;
-	height: fit-content;
+	height: 100%;
 }
 
 .header {
@@ -195,6 +198,9 @@ body {
 /** =================== Media ======================= */
 /* Desktops */
 @media (max-width: 1280px) {
+	.wrapper {
+		min-height: 700px;
+	}
 	.coming-soon {
 		height: 100%;
 	}
@@ -210,6 +216,10 @@ body {
 
 /* Laptops */
 @media (max-width: 1024px) {
+	.wrapper {
+		min-height: 600px;
+	}
+
 	.coming-soon {
 		max-height: fit-content;
 	}
@@ -242,7 +252,7 @@ body {
 		flex-basis: 100%;
 		height: 50%;
 		order: 2;
-		padding-top: 0;
+		padding-top: 40px;
 	}
 
 	.title, .text {
@@ -274,10 +284,6 @@ body {
 @media (max-width: 480px) {
 	html {
 		font-size: 54%;
-	}
-
-	.wrapper {
-		height: 100%;
 	}
 
 	.coming-soon {
